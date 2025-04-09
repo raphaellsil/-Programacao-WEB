@@ -1,0 +1,1334 @@
+/* Define variáveis de cores e efeitos para reutilização */
+:root {
+  --primary-color: #2e7d32; /* Verde agrícola - cor principal */
+  --secondary-color: #689f38; /* Verde mais claro - cor secundária */
+  --accent-color: #ff9800; /* Laranja - cor de destaque */
+  --dark-color: #1b5e20; /* Verde escuro - para textos e elementos escuros */
+  --light-color: #f1f8e9; /* Verde muito claro - para fundos claros */
+  --text-color: #333; /* Cor padrão para texto */
+  --text-light: #666; /* Cor para texto secundário */
+  --white: #fff; /* Branco puro */
+  --gray: #f5f5f5; /* Cinza claro para fundos */
+  --dark-gray: #e0e0e0; /* Cinza para bordas e divisores */
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra padrão */
+  --transition: all 0.3s ease; /* Transição suave padrão */
+}
+
+/*               RESET E BASE                    */
+
+/* Reset básico para remover margens e paddings padrão */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Faz com que padding não some à largura */
+}
+
+/* Configuração suave de scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Estilos base do corpo do documento */
+body {
+  font-family: 'Open Sans', sans-serif; /* Fonte principal */
+  color: var(--text-color); /* Cor do texto */
+  line-height: 1.6; /* Espaçamento entre linhas */
+  background-color: var(--white); /* Cor de fundo */
+  overflow-x: hidden; /* Evita scroll horizontal */
+}
+
+/* Container principal para centralizar conteúdo */
+.container {
+  width: 100%;
+  max-width: 1200px; /* Largura máxima */
+  margin: 0 auto; /* Centraliza horizontalmente */
+  padding: 0 20px; /* Padding nas laterais em telas menores */
+}
+
+/*               TIPOGRAFIA                      */
+
+/* Estilos para cabeçalhos */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700; /* Negrito */
+  line-height: 1.2; /* Espaçamento menor entre linhas */
+  margin-bottom: 15px; /* Margem inferior padrão */
+}
+
+/* Estilos para parágrafos */
+p {
+  margin-bottom: 15px; /* Margem inferior padrão */
+}
+
+/* Estilos para links */
+a {
+  text-decoration: none; /* Remove sublinhado */
+  color: var(--primary-color); /* Cor primária */
+  transition: var(--transition); /* Transição suave */
+}
+
+/* Efeito hover para links */
+a:hover {
+  color: var(--dark-color); /* Cor mais escura ao passar mouse */
+}
+
+/*               COMPONENTES                     */
+
+/* Botão padrão */
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: var(--primary-color); /* Cor primária */
+  color: var(--white); /* Texto branco */
+  border-radius: 4px; /* Bordas arredondadas */
+  font-weight: 600; /* Semi-negrito */
+  text-transform: uppercase; /* Texto em maiúsculas */
+  letter-spacing: 1px; /* Espaçamento entre letras */
+  transition: var(--transition); /* Transição suave */
+  border: none; /* Remove borda */
+  cursor: pointer; /* Cursor de pointer */
+  text-align: center; /* Centraliza texto */
+}
+
+/* Efeito hover para botão */
+.btn:hover {
+  background-color: var(--dark-color); /* Cor mais escura */
+  transform: translateY(-3px); /* Levanta levemente */
+  box-shadow: var(--shadow); /* Adiciona sombra */
+}
+
+/* Botão de contato específico */
+.contact-btn {
+  background-color: var(--accent-color); /* Cor de destaque */
+  color: var(--white);
+  padding: 10px 20px; /* Padding menor */
+  border-radius: 4px;
+  margin-left: 10px; /* Margem à esquerda */
+}
+
+/* Efeito hover para botão de contato */
+.contact-btn:hover {
+  background-color: #e65100; /* Laranja mais escuro */
+}
+
+/* Cabeçalho de seção */
+.section-header {
+  text-align: center; /* Centraliza conteúdo */
+  margin-bottom: 50px; /* Margem inferior grande */
+}
+
+/* Título da seção */
+.section-header h2 {
+  font-size: 2.5rem; /* Tamanho grande */
+  color: var(--dark-color); /* Cor escura */
+  position: relative; /* Para posicionar o divisor */
+  display: inline-block; /* Para conter o divisor */
+}
+
+/* Descrição da seção */
+.section-description {
+  max-width: 700px; /* Largura máxima para melhor leitura */
+  margin: 0 auto; /* Centraliza */
+  color: var(--text-light); /* Cor de texto secundário */
+}
+
+/* Divisor decorativo */
+.divider {
+  width: 80px; /* Largura fixa */
+  height: 4px; /* Altura */
+  background-color: var(--accent-color); /* Cor de destaque */
+  margin: 15px auto 25px; /* Margens vertical e centralizado */
+  border-radius: 2px; /* Bordas levemente arredondadas */
+}
+
+
+/*               HEADER/NAVEGAÇÃO                */
+
+
+/* Cabeçalho fixo no topo */
+header {
+  background-color: var(--white); /* Fundo branco */
+  box-shadow: var(--shadow); /* Sombra */
+  position: fixed; /* Fixo no topo */
+  width: 100%; /* Largura total */
+  top: 0; /* Alinhado ao topo */
+  z-index: 1000; /* Garante que fique acima de outros elementos */
+  transition: var(--transition); /* Transição suave */
+}
+
+/* Classe adicionada quando scroll é feito */
+.header-scrolled {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra menor */
+  padding: 10px 0; /* Padding reduzido */
+}
+
+/* Container do cabeçalho principal */
+.main-header {
+  padding: 15px 0; /* Padding vertical */
+  transition: var(--transition); /* Transição suave */
+}
+
+/* Conteúdo do cabeçalho (logo + navegação) */
+.header-content {
+  display: flex; /* Layout flexível */
+  justify-content: space-between; /* Espaço entre logo e nav */
+  align-items: center; /* Alinha verticalmente */
+}
+
+/* Estilos do logo */
+.logo h1 {
+  color: var(--primary-color); /* Cor primária */
+  font-size: 1.8rem; /* Tamanho grande */
+  margin-bottom: 5px; /* Margem inferior pequena */
+}
+
+.logo p {
+  color: var(--text-light); /* Texto secundário */
+  font-size: 0.9rem; /* Tamanho pequeno */
+}
+
+/* Link do logo */
+.logo-link {
+  text-decoration: none; /* Remove sublinhado */
+  color: inherit; /* Herda cor do elemento pai */
+  display: block; /* Transforma em bloco */
+}
+
+/* Remove efeitos hover do link do logo */
+.logo-link:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Navegação */
+nav ul {
+  display: flex; /* Itens em linha */
+  list-style: none; /* Remove marcadores */
+}
+
+nav ul li {
+  margin-left: 20px; /* Espaço entre itens */
+}
+
+nav ul li a {
+  font-weight: 600; /* Semi-negrito */
+  color: var(--text-color); /* Cor do texto */
+  padding: 5px 0; /* Padding vertical */
+  position: relative; /* Para efeito de sublinhado */
+}
+
+/* Efeito de sublinhado animado */
+nav ul li a:after {
+  content: '';
+  position: absolute;
+  width: 0; /* Inicia com largura zero */
+  height: 2px; /* Altura do sublinhado */
+  background: var(--primary-color); /* Cor primária */
+  bottom: 0; /* Alinhado na base */
+  left: 0; /* Começa da esquerda */
+  transition: var(--transition); /* Transição suave */
+}
+
+/* Animação do sublinhado ao passar mouse */
+nav ul li a:hover:after {
+  width: 100%; /* Expandir para largura total */
+}
+
+/*               SEÇÃO HERO                     */
+
+/* Seção hero (banner principal) */
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+              url('img/plantaçao.jpg') no-repeat center center/cover;
+  height: 100vh; /* Altura total da viewport */
+  display: flex; /* Layout flexível */
+  align-items: center; /* Centraliza verticalmente */
+  text-align: center; /* Centraliza texto */
+  color: var(--white); /* Texto branco */
+  padding-top: 80px; /* Compensa o header fixo */
+  position: relative; /* Para posicionar overlay */
+}
+
+/* Overlay escuro para melhor legibilidade */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* Preto com transparência */
+}
+
+/* Container do conteúdo hero */
+.hero .container {
+  position: relative; /* Para ficar acima do overlay */
+  z-index: 1; /* Garante que fique acima do overlay */
+}
+
+/* Título principal */
+.hero h1 {
+  font-size: 3.5rem; /* Tamanho muito grande */
+  margin-bottom: 20px; /* Margem inferior */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra no texto */
+}
+
+/* Texto do hero */
+.hero p {
+  font-size: 1.2rem; /* Tamanho aumentado */
+  max-width: 800px; /* Largura máxima */
+  margin: 0 auto 30px; /* Centraliza e margem inferior */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sombra sutil */
+}
+
+/*               SEÇÃO SOBRE                    */
+
+#sobre {
+  padding: 100px 0; /* Espaçamento vertical grande */
+  background-color: var(--white); /* Fundo branco */
+  position: relative; /* Para posicionamento de elementos filhos */
+}
+
+/* Layout do conteúdo sobre */
+.about-content {
+  display: flex; /* Layout flexível */
+  gap: 40px; /* Espaço entre colunas */
+  align-items: center; /* Alinha verticalmente */
+}
+
+/* Coluna de texto */
+.about-text {
+  flex: 1; /* Ocupa espaço disponível */
+}
+
+/* Coluna de imagem */
+.about-image {
+  flex: 1; /* Ocupa espaço disponível */
+  position: relative; /* Para posicionar elementos filhos */
+}
+
+/* Estilo da imagem */
+.about-image img {
+  width: 100%; /* Largura total */
+  border-radius: 8px; /* Bordas arredondadas */
+  box-shadow: var(--shadow); /* Sombra */
+  transition: transform 0.5s ease; /* Transição suave para zoom */
+}
+
+/* Efeito hover na imagem */
+.about-image:hover img {
+  transform: scale(1.02); /* Zoom leve */
+}
+
+/* Legenda da imagem */
+.image-caption {
+  text-align: center; /* Centraliza texto */
+  font-style: italic; /* Itálico */
+  color: var(--text-light); /* Cor secundária */
+  margin-top: 10px; /* Espaço acima */
+  font-size: 0.9rem; /* Tamanho pequeno */
+}
+
+/* Caixa adicional de informação */
+.additional-box {
+  background-color: var(--light-color); /* Fundo claro */
+  border-left: 4px solid var(--primary-color); /* Borda lateral */
+  padding: 20px; /* Espaçamento interno */
+  margin-top: 30px; /* Espaço acima */
+  border-radius: 0 4px 4px 0; /* Bordas arredondadas só à direita */
+  transition: var(--transition); /* Transição suave */
+}
+
+/* Efeito hover na caixa */
+.additional-box:hover {
+  transform: translateX(5px); /* Move levemente para direita */
+}
+
+/* Título da caixa */
+.additional-box h4 {
+  color: var(--primary-color); /* Cor primária */
+  margin-bottom: 10px; /* Espaço abaixo */
+}
+
+/*               SEÇÃO IMPORTÂNCIA              */
+
+.importance {
+  padding: 100px 0; /* Espaçamento vertical grande */
+  background-color: var(--gray); /* Fundo cinza claro */
+}
+
+/* Container de estatísticas */
+.stats {
+  display: flex; /* Layout flexível */
+  justify-content: space-around; /* Espaço uniforme entre itens */
+  flex-wrap: wrap; /* Quebra linha se necessário */
+  margin: 50px 0; /* Margem vertical grande */
+}
+
+/* Item de estatística */
+.stat-item {
+  text-align: center; /* Centraliza conteúdo */
+  margin: 15px; /* Margem externa */
+  flex: 1; /* Cresce para preencher espaço */
+  min-width: 150px; /* Largura mínima */
+  padding: 20px; /* Espaçamento interno */
+  background-color: var(--white); /* Fundo branco */
+  border-radius: 8px; /* Bordas arredondadas */
+  box-shadow: var(--shadow); /* Sombra */
+  transition: var(--transition); /* Transição suave */
+}
+
+/* Efeito hover no item */
+.stat-item:hover {
+  transform: translateY(-5px); /* Levanta levemente */
+}
+
+/* Número da estatística */
+.stat-number {
+  font-size: 3rem; /* Tamanho grande */
+  font-weight: 700; /* Negrito */
+  color: var(--primary-color); /* Cor primária */
+  margin-bottom: 10px; /* Espaço abaixo */
+}
+
+/* Informações adicionais */
+.additional-info {
+  margin-top: 50px; /* Espaço acima */
+}
+
+/* Container do mapa */
+.map-container {
+  margin-top: 30px; /* Espaço acima */
+}
+
+/* Estilo da imagem do mapa */
+.map-image {
+  position: relative; /* Para posicionar pontos */
+  margin-top: 20px; /* Espaço acima */
+  border-radius: 8px; /* Bordas arredondadas */
+  overflow: hidden; /* Esconde conteúdo que ultrapassa */
+}
+
+.map-image img {
+  width: 100%; /* Largura total */
+  border-radius: 8px; /* Bordas arredondadas */
+  box-shadow: var(--shadow); /* Sombra */
+  transition: transform 0.5s ease; /* Transição suave para zoom */
+}
+
+/* Efeito hover no mapa */
+.map-image:hover img {
+  transform: scale(1.02); /* Zoom leve */
+}
+
+/* Overlay para pontos clicáveis */
+.map-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Ponto no mapa */
+.map-point {
+  position: absolute;
+  cursor: pointer; /* Cursor de pointer */
+  z-index: 2; /* Sobreposto ao mapa */
+}
+
+/* Estilo visual do ponto */
+.point {
+  width: 15px;
+  height: 15px;
+  background-color: var(--accent-color); /* Cor de destaque */
+  border-radius: 50%; /* Forma circular */
+  border: 3px solid var(--white); /* Borda branca */
+  box-shadow: 0 0 0 2px var(--accent-color); /* Sombra */
+  transition: var(--transition); /* Transição suave */
+}
+
+/* Efeito hover no ponto */
+.map-point:hover .point {
+  transform: scale(1.2); /* Aumenta tamanho */
+}
+
+/* Tooltip do mapa */
+.map-tooltip {
+  position: absolute;
+  left: 25px;
+  top: -10px;
+  background-color: var(--white); /* Fundo branco */
+  padding: 8px 15px; /* Espaçamento interno */
+  border-radius: 4px; /* Bordas arredondadas */
+  box-shadow: var(--shadow); /* Sombra */
+  font-size: 0.8rem; /* Tamanho pequeno */
+  white-space: nowrap; /* Texto em uma linha */
+  opacity: 0; /* Inicialmente invisível */
+  transition: var(--transition); /* Transição suave */
+}
+
+/* Mostra tooltip ao passar mouse */
+.map-point:hover .map-tooltip {
+  opacity: 1; /* Torna visível */
+}
+
+/*               SEÇÃO PRODUTOS                 */
+
+.products-section {
+  padding: 100px 0; /* Espaçamento vertical grande */
+  background-color: var(--white); /* Fundo branco */
+}
+
+/* Grid de produtos */
+.products-grid {
+  display: grid; /* Layout grid */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Colunas responsivas */
+  gap: 30px; /* Espaço entre itens */
+  margin-top: 40px; /* Espaço acima */
+}
+
+/* Card de produto */
+.product-card {
+  background-color: var(--white); /* Fundo branco */
+  border-radius: 8px; /* Bordas arredondadas */
+  overflow: hidden; /* Esconde conteúdo que ultrapassa */
+  box-shadow: var(--shadow); /* Sombra */
+  transition: var(--transition); /* Transição suave */
+}
+
+/* Efeito hover no card */
+.product-card:hover {
+  transform: translateY(-10px); /* Levanta */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Sombra maior */
+}
+
+/* Container da imagem */
+.product-image {
+  height: 200px; /* Altura fixa */
+  overflow: hidden; /* Esconde partes da imagem */
+}
+
+.product-image img {
+  width: 100%; /* Largura total */
+  height: 100%; /* Altura total */
+  object-fit: cover; /* Preenche espaço mantendo proporção */
+  transition: transform 0.5s ease; /* Transição suave para zoom */
+}
+
+/* Efeito hover na imagem */
+.product-card:hover .product-image img {
+  transform: scale(1.1); /* Zoom */
+}
+
+/* Área de informações */
+.product-info {
+  padding: 20px; /* Espaçamento interno */
+}
+
+.product-info h3 {
+  color: var(--primary-color); /* Cor primária */
+  margin-bottom: 15px; /* Espaço abaixo */
+}
+
+.product-info ul {
+  margin-top: 15px; /* Espaço acima */
+  padding-left: 20px; /* Recuo da lista */
+}
+
+.product-info li {
+  margin-bottom: 8px; /* Espaço entre itens */
+  font-size: 0.9rem; /* Tamanho pequeno */
+}
+
+/*               SEÇÃO DESAFIOS                 */
+
+#desafios {
+  padding: 100px 0; /* Espaçamento vertical grande */
+  background-color: var(--gray); /* Fundo cinza claro */
+}
+
+/* Grid de cards */
+.cards {
+  display: grid; /* Layout grid */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Colunas responsivas */
+  gap: 30px; /* Espaço entre itens */
+  margin-top: 40px; /* Espaço acima */
+}
+
+/* Card individual */
+.card {
+  background-color: var(--white); /* Fundo branco */
+  border-radius: 8px; /* Bordas arredondadas */
+  padding: 30px; /* Espaçamento interno */
+  box-shadow: var(--shadow); /* Sombra */
+  transition: var(--transition); /* Transição suave */
+  text-align: center; /* Centraliza conteúdo */
+}
+
+/* Efeito hover no card */
+.card:hover {
+  transform: translateY(-10px); /* Levanta */
+}
+
+/* Container do ícone */
+.icon-container {
+  width: 70px;
+  height: 70px;
+  background-color: var(--light-color); /* Fundo claro */
+  border-radius: 50%; /* Forma circular */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px; /* Centraliza e margem abaixo */
+}
+
+/* Estilo do ícone */
+.icon-container i {
+  font-size: 1.8rem; /* Tamanho grande */
+  color: var(--primary-color); /* Cor primária */
+}
+
+.card h3 {
+  margin-bottom: 15px; /* Espaço abaixo */
+  color: var(--primary-color); /* Cor primária */
+}
+
+/* Rodapé do card */
+.card-footer {
+  margin-top: 20px; /* Espaço acima */
+  padding-top: 15px; /* Espaço interno acima */
+  border-top: 1px solid var(--dark-gray); /* Linha divisória */
+  font-size: 0.9rem; /* Tamanho pequeno */
+  color: var(--text-light); /* Cor secundária */
+}
+
+/* Seção de perspectiva */
+.challenges-outlook {
+  margin-top: 60px; /* Espaço grande acima */
+}
+
+/* Grid de cards de perspectiva */
+.outlook-cards {
+  display: grid; /* Layout grid */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Colunas responsivas */
+  gap: 20px; /* Espaço entre itens */
+  margin-top: 30px; /* Espaço acima */
+}
+
+/* Card de perspectiva */
+.outlook-card {
+  background-color: var(--white); /* Fundo branco */
+  padding: 25px 15px; /* Espaçamento interno */
+  border-radius: 8px; /* Bordas arredondadas */
+  text-align: center; /* Centraliza conteúdo */
+  box-shadow: var(--shadow); /* Sombra */
+  transition: var(--transition); /* Transição suave */
+}
+
+/* Efeito hover no card */
+.outlook-card:hover {
+  transform: translateY(-5px); /* Levanta levemente */
+  background-color: var(--primary-color); /* Fundo primário */
+  color: var(--white); /* Texto branco */
+}
+
+/* Efeito hover no ícone */
+.outlook-card:hover i {
+  color: var(--white); /* Ícone branco */
+}
+
+/*               SEÇÃO TENDÊNCIAS               */
+
+#tendencias {
+  padding: 100px 0; /* Espaçamento vertical grande */
+  background-color: var(--white); /* Fundo branco */
+}
+
+/* Container de estatísticas */
+.trend-stats {
+  display: flex; /* Layout flexível */
+  justify-content: center; /* Centraliza horizontalmente */
+  margin-top: 20px; /* Espaço acima */
+}
+
+/* Item de estatística */
+.trend-stat {
+  text-align: center; /* Centraliza conteúdo */
+  background-color: var(--light-color); /* Fundo claro */
+  padding: 10px 15px; /* Espaçamento interno */
+  border-radius: 4px; /* Bordas arredondadas */
+  margin: 0 5px; /* Margem entre itens */
+}
+
+/* Número da estatística */
+.trend-stat span {
+  font-weight: 700; /* Negrito */
+  color: var(--primary-color); /* Cor primária */
+  display: block; /* Quebra linha */
+}
+
+/* Seção de perspectiva futura */
+.future-outlook {
+  margin-top: 60px; /* Espaço grande acima */
+  background-color: var(--gray); /* Fundo cinza claro */
+  padding: 30px; /* Espaçamento interno */
+  border-radius: 8px; /* Bordas arredondadas */
+}
+
+/* Gráfico de investimento */
+.investment-chart {
+  margin-top: 40px; /* Espaço acima */
+}
+
+/* Barras do gráfico */
+.chart-bars {
+  margin-top: 20px; /* Espaço acima */
+}
+
+.chart-bar {
+  margin-bottom: 15px; /* Espaço entre barras */
+}
+
+/* Rótulo da barra */
+.chart-bar span {
+  display: block; /* Quebra linha */
+  margin-bottom: 5px; /* Espaço abaixo */
+  font-weight: 600; /* Semi-negrito */
+}
+
+/* Barra vazia */
+.bar {
+  width: 100%; /* Largura total */
+  height: 30px; /* Altura fixa */
+  background-color: var(--dark-gray); /* Cinza */
+  border-radius: 15px; /* Bordas arredondadas */
+  overflow: hidden; /* Esconde conteúdo que ultrapassa */
+}
+
+/* Preenchimento da barra */
+.fill {
+  height: 100%; /* Altura total */
+  background-color: var(--primary-color); /* Cor primária */
+  border-radius: 15px; /* Bordas arredondadas */
+  position: relative; /* Para posicionar texto */
+  width: var(--value); /* Largura definida por variável */
+}
+
+/* Texto dentro da barra */
+.fill span {
+  position: absolute; /* Posicionamento absoluto */
+  right: 10px; /* Distância da direita */
+  top: 50%; /* Meio vertical */
+  transform: translateY(-50%); /* Centraliza verticalmente */
+  color: var(--white); /* Texto branco */
+  font-size: 0.8rem; /* Tamanho pequeno */
+}
+
+/*               SEÇÃO CONTATO                  */
+
+.contact-section {
+  padding: 100px 0; /* Espaçamento vertical grande */
+  background-color: var(--gray); /* Fundo cinza claro */
+}
+
+/* Layout do conteúdo */
+.contact-content {
+  display: flex; /* Layout flexível */
+  gap: 40px; /* Espaço entre colunas */
+  margin-top: 40px; /* Espaço acima */
+}
+
+/* Coluna de informações */
+.contact-info {
+  flex: 1; /* Ocupa espaço disponível */
+}
+
+.contact-info h3 {
+  margin-bottom: 20px; /* Espaço abaixo */
+  color: var(--primary-color); /* Cor primária */
+}
+
+/* Estilo dos itens de contato */
+.contact-info p {
+  margin-bottom: 15px; /* Espaço entre itens */
+  display: flex; /* Layout flexível */
+  align-items: center; /* Alinha ícone e texto */
+}
+
+/* Estilo dos ícones */
+.contact-info i {
+  margin-right: 10px; /* Espaço à direita */
+  color: var(--primary-color); /* Cor primária */
+  width: 20px; /* Largura fixa */
+  text-align: center; /* Centraliza ícone */
+}
+
+/* Mapa de contato */
+.contact-map {
+  margin-top: 30px; /* Espaço acima */
+  border-radius: 8px; /* Bordas arredondadas */
+  overflow: hidden; /* Esconde conteúdo que ultrapassa */
+  box-shadow: var(--shadow); /* Sombra */
+}
+
+/* Formulário de contato */
+.contact-form {
+  flex: 1; /* Ocupa espaço disponível */
+  background-color: var(--white); /* Fundo branco */
+  padding: 30px; /* Espaçamento interno */
+  border-radius: 8px; /* Bordas arredondadas */
+  box-shadow: var(--shadow); /* Sombra */
+}
+
+/* Grupo de campos do formulário */
+.form-group {
+  margin-bottom: 20px; /* Espaço entre grupos */
+}
+
+/* Rótulo dos campos */
+.form-group label {
+  display: block; /* Quebra linha */
+  margin-bottom: 8px; /* Espaço abaixo */
+  font-weight: 600; /* Semi-negrito */
+}
+
+/* Campos do formulário */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%; /* Largura total */
+  padding: 12px 15px; /* Espaçamento interno */
+  border: 1px solid var(--dark-gray); /* Borda cinza */
+  border-radius: 4px; /* Bordas arredondadas */
+  font-family: 'Open Sans', sans-serif; /* Fonte consistente */
+  transition: var(--transition); /* Transição suave */
+}
+
+/* Efeito focus nos campos */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none; /* Remove outline padrão */
+  border-color: var(--primary-color); /* Borda primária */
+  box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.2); /* Sombra sutil */
+}
+
+/* Área de texto */
+.form-group textarea {
+  min-height: 120px; /* Altura mínima */
+  resize: vertical; /* Permite redimensionar só vertical */
+}
+
+/*               SEÇÃO NOTÍCIAS                 */
+
+.news-section {
+  padding: 100px 0; /* Espaçamento vertical grande */
+  background-color: var(--white); /* Fundo branco */
+}
+
+/* Grid de notícias */
+.news-grid {
+  display: grid; /* Layout grid */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Colunas responsivas */
+  gap: 30px; /* Espaço entre itens */
+  margin-top: 40px; /* Espaço acima */
+}
+
+/* Card de notícia */
+.news-card {
+  background-color: var(--white); /* Fundo branco */
+  border-radius: 8px; /* Bordas arredondadas */
+  overflow: hidden; /* Esconde conteúdo que ultrapassa */
+  box-shadow: var(--shadow); /* Sombra */
+  transition: var(--transition); /* Transição suave */
+}
+
+/* Efeito hover no card */
+.news-card:hover {
+  transform: translateY(-10px); /* Levanta */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Sombra maior */
+}
+
+/* Imagem da notícia */
+.news-image {
+  height: 200px; /* Altura fixa */
+  position: relative; /* Para posicionar data */
+  overflow: hidden; /* Esconde partes da imagem */
+}
+
+.news-image img {
+  width: 100%; /* Largura total */
+  height: 100%; /* Altura total */
+  object-fit: cover; /* Preenche espaço mantendo proporção */
+  transition: transform 0.5s ease; /* Transição suave para zoom */
+}
+
+/* Efeito hover na imagem */
+.news-card:hover .news-image img {
+  transform: scale(1.1); /* Zoom */
+}
+
+/* Data da notícia */
+.news-date {
+  position: absolute; /* Posicionamento absoluto */
+  top: 15px; /* Distância do topo */
+  right: 15px; /* Distância da direita */
+  background-color: var(--primary-color); /* Cor primária */
+  color: var(--white); /* Texto branco */
+  padding: 5px 10px; /* Espaçamento interno */
+  border-radius: 4px; /* Bordas arredondadas */
+  font-size: 0.8rem; /* Tamanho pequeno */
+  font-weight: 600; /* Semi-negrito */
+}
+
+/* Conteúdo da notícia */
+.news-content {
+  padding: 20px; /* Espaçamento interno */
+}
+
+.news-content h3 {
+  margin-bottom: 10px; /* Espaço abaixo */
+  color: var(--primary-color); /* Cor primária */
+}
+
+.news-content p {
+  margin-bottom: 15px; /* Espaço abaixo */
+  font-size: 0.9rem; /* Tamanho pequeno */
+}
+
+/* Link "Leia mais" */
+.read-more {
+  display: inline-flex; /* Layout flexível inline */
+  align-items: center; /* Alinha ícone e texto */
+  font-weight: 600; /* Semi-negrito */
+  font-size: 0.9rem; /* Tamanho pequeno */
+  color: var(--primary-color); /* Cor primária */
+}
+
+/* Ícone do link */
+.read-more i {
+  margin-left: 5px; /* Espaço à esquerda */
+  transition: var(--transition); /* Transição suave */
+}
+
+/* Efeito hover no ícone */
+.read-more:hover i {
+  transform: translateX(3px); /* Move para direita */
+}
+
+/* Chamada para ação */
+.news-cta {
+  text-align: center; /* Centraliza conteúdo */
+  margin-top: 50px; /* Espaço grande acima */
+}
+
+/*               NEWSLETTER                     */
+
+.newsletter {
+  padding: 60px 0; /* Espaçamento vertical */
+  background-color: var(--primary-color); /* Cor primária */
+  color: var(--white); /* Texto branco */
+  text-align: center; /* Centraliza conteúdo */
+}
+
+.newsletter h3 {
+  margin-bottom: 15px; /* Espaço abaixo */
+  font-size: 2rem; /* Tamanho grande */
+}
+
+.newsletter p {
+  max-width: 600px; /* Largura máxima */
+  margin: 0 auto 30px; /* Centraliza e margem abaixo */
+}
+
+/* Formulário de newsletter */
+.newsletter form {
+  display: flex; /* Layout flexível */
+  max-width: 500px; /* Largura máxima */
+  margin: 0 auto; /* Centraliza */
+}
+
+/* Campo de email */
+.newsletter input {
+  flex: 1; /* Ocupa espaço disponível */
+  padding: 15px; /* Espaçamento interno */
+  border: none; /* Remove borda */
+  border-radius: 4px 0 0 4px; /* Bordas arredondadas à esquerda */
+  font-family: 'Open Sans', sans-serif; /* Fonte consistente */
+}
+
+/* Botão de enviar */
+.newsletter button {
+  border-radius: 0 4px 4px 0; /* Bordas arredondadas à direita */
+  background-color: var(--accent-color); /* Cor de destaque */
+  border: none; /* Remove borda */
+  padding: 0 30px; /* Espaçamento interno */
+  cursor: pointer; /* Cursor de pointer */
+  transition: var(--transition); /* Transição suave */
+}
+
+/* Efeito hover no botão */
+.newsletter button:hover {
+  background-color: #e65100; /* Laranja mais escuro */
+}
+
+/*               RODAPÉ                         */
+footer {
+  background-color: var(--dark-color); /* Verde escuro */
+  color: var(--white); /* Texto branco */
+  padding: 60px 0 0; /* Espaçamento vertical (sem padding abaixo) */
+}
+
+/* Conteúdo do rodapé */
+.footer-content {
+  display: grid; /* Layout grid */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Colunas responsivas */
+  gap: 40px; /* Espaço entre colunas */
+  margin-bottom: 40px; /* Espaço abaixo */
+}
+
+/* Seção do rodapé */
+.footer-section h3 {
+  color: var(--white); /* Texto branco */
+  margin-bottom: 20px; /* Espaço abaixo */
+  font-size: 1.3rem; /* Tamanho médio */
+  position: relative; /* Para linha decorativa */
+  padding-bottom: 10px; /* Espaço para linha */
+}
+
+/* Linha decorativa abaixo do título */
+.footer-section h3:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 2px;
+  background-color: var(--accent-color); /* Cor de destaque */
+}
+
+/* Texto sobre a empresa */
+.footer-section.about p {
+  margin-bottom: 20px; /* Espaço abaixo */
+}
+
+/* Itens de contato */
+.contact span {
+  display: block; /* Quebra linha */
+  margin-bottom: 10px; /* Espaço entre itens */
+  font-size: 0.9rem; /* Tamanho pequeno */
+}
+
+/* Ícones de contato */
+.contact i {
+  margin-right: 10px; /* Espaço à direita */
+  width: 20px; /* Largura fixa */
+  text-align: center; /* Centraliza ícone */
+}
+
+/* Links rápidos */
+.footer-section.links ul {
+  list-style: none; /* Remove marcadores */
+}
+
+.footer-section.links li {
+  margin-bottom: 10px; /* Espaço entre itens */
+}
+
+.footer-section.links a {
+  color: var(--white); /* Texto branco */
+  opacity: 0.8; /* Transparência */
+  transition: var(--transition); /* Transição suave */
+}
+
+/* Efeito hover nos links */
+.footer-section.links a:hover {
+  opacity: 1; /* Opacidade total */
+  padding-left: 5px; /* Move para direita */
+}
+
+/* Links sociais */
+.social-links {
+  display: flex; /* Layout flexível */
+  gap: 15px; /* Espaço entre itens */
+  margin-top: 20px; /* Espaço acima */
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.1); /* Fundo transparente */
+  border-radius: 50%; /* Forma circular */
+  color: var(--white); /* Ícone branco */
+  transition: var(--transition); /* Transição suave */
+}
+
+/* Efeito hover nos links sociais */
+.social-links a:hover {
+  background-color: var(--accent-color); /* Cor de destaque */
+  transform: translateY(-3px); /* Levanta levemente */
+}
+
+/* Rodapé inferior */
+.footer-bottom {
+  background-color: rgba(0, 0, 0, 0.2); /* Fundo semi-transparente */
+  padding: 20px 0; /* Espaçamento vertical */
+  text-align: center; /* Centraliza conteúdo */
+}
+
+/* Conteúdo do rodapé inferior */
+.footer-bottom-content {
+  display: flex; /* Layout flexível */
+  justify-content: space-between; /* Espaço entre itens */
+  align-items: center; /* Alinha verticalmente */
+}
+
+.footer-bottom p {
+  margin: 0; /* Remove margem */
+  font-size: 0.9rem; /* Tamanho pequeno */
+  opacity: 0.8; /* Transparência */
+}
+
+/* Links legais */
+.footer-legal {
+  display: flex; /* Layout flexível */
+  gap: 20px; /* Espaço entre links */
+}
+
+.footer-legal a {
+  color: var(--white); /* Texto branco */
+  opacity: 0.8; /* Transparência */
+  font-size: 0.9rem; /* Tamanho pequeno */
+  transition: var(--transition); /* Transição suave */
+}
+
+/* Efeito hover nos links legais */
+.footer-legal a:hover {
+  opacity: 1; /* Opacidade total */
+}
+
+/*               RESPONSIVIDADE                 */
+
+/* Tablet - 992px ou menos */
+@media (max-width: 992px) {
+  .hero h1 {
+    font-size: 2.8rem; /* Reduz tamanho do título */
+  }
+  
+  /* Layout em coluna para seção sobre */
+  .about-content {
+    flex-direction: column;
+  }
+  
+  /* Layout em coluna para seção de contato */
+  .contact-content {
+    flex-direction: column;
+  }
+}
+
+/* Tablet pequeno - 768px ou menos */
+@media (max-width: 768px) {
+  /* Layout em coluna para cabeçalho */
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  /* Ajustes na navegação */
+  nav ul {
+    margin-top: 20px;
+    flex-wrap: wrap; /* Quebra linha se necessário */
+    justify-content: center; /* Centraliza itens */
+  }
+  
+  nav ul li {
+    margin: 5px 10px; /* Margem menor entre itens */
+  }
+  
+  /* Reduz tamanho do título hero */
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  
+  /* Reduz tamanho do texto hero */
+  .hero p {
+    font-size: 1rem;
+  }
+  
+  /* Reduz tamanho do título da seção */
+  .section-header h2 {
+    font-size: 2rem;
+  }
+  
+  /* Layout em coluna para estatísticas */
+  .stats {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .stat-item {
+    width: 80%; /* Largura maior */
+    margin-bottom: 20px; /* Espaço entre itens */
+  }
+}
+
+/* Mobile - 576px ou menos */
+@media (max-width: 576px) {
+  /* Reduz ainda mais o título hero */
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  
+  /* Botões menores */
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  
+  /* Rodapé inferior em coluna */
+  .footer-bottom-content {
+    flex-direction: column;
+    gap: 10px; /* Espaço entre itens */
+  }
+  
+  /* Links legais em múltiplas linhas */
+  .footer-legal {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 20px; /* Espaço entre itens */
+  }
+  
+  /* Formulário de newsletter em coluna */
+  .newsletter form {
+    flex-direction: column;
+  }
+  
+  .newsletter input {
+    border-radius: 4px; /* Bordas arredondadas em todos os lados */
+    margin-bottom: 10px; /* Espaço abaixo */
+  }
+  
+  .newsletter button {
+    border-radius: 4px; /* Bordas arredondadas em todos os lados */
+    padding: 15px; /* Espaçamento interno maior */
+  }
+}
+
+/*               ANIMAÇÕES                      */
+
+/* Efeito de scroll no header */
+.header-scrolled {
+  padding: 10px 0; /* Padding menor */
+  background-color: rgba(255, 255, 255, 0.98); /* Fundo semi-transparente */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+/* Animação de aparecimento suave */
+.stat-item,
+.product-card,
+.card,
+.news-card,
+.outlook-card {
+  opacity: 0; /* Inicialmente invisível */
+  transform: translateY(20px); /* Deslocado para baixo */
+  transition: opacity 0.6s ease, transform 0.6s ease; /* Transição suave */
+}
+
+/* Estado animado */
+.stat-item.animate,
+.product-card.animate,
+.card.animate,
+.news-card.animate,
+.outlook-card.animate {
+  opacity: 1; /* Torna visível */
+  transform: translateY(0); /* Volta à posição normal */
+}
+
+/* Delays para animação em sequência */
+.product-card:nth-child(1) { transition-delay: 0.1s; }
+.product-card:nth-child(2) { transition-delay: 0.2s; }
+.product-card:nth-child(3) { transition-delay: 0.3s; }
+
+.card:nth-child(1) { transition-delay: 0.1s; }
+.card:nth-child(2) { transition-delay: 0.2s; }
+.card:nth-child(3) { transition-delay: 0.3s; }
+
+.news-card:nth-child(1) { transition-delay: 0.1s; }
+.news-card:nth-child(2) { transition-delay: 0.2s; }
+.news-card:nth-child(3) { transition-delay: 0.3s; }
+
+.outlook-card:nth-child(1) { transition-delay: 0.1s; }
+.outlook-card:nth-child(2) { transition-delay: 0.2s; }
+.outlook-card:nth-child(3) { transition-delay: 0.3s; }
+.outlook-card:nth-child(4) { transition-delay: 0.4s; }
+
+/* Barra de progresso de scroll */
+.progress-container {
+  position: fixed; /* Fixo no topo */
+  top: 0;
+  left: 0;
+  width: 100%; /* Largura total */
+  height: 4px; /* Altura fina */
+  background: transparent; /* Fundo transparente */
+  z-index: 1001; /* Acima de outros elementos */
+}
+
+.progress-bar {
+  height: 4px; /* Altura */
+  background: #ff9800; /* Cor de destaque */
+  width: 0%; /* Inicia com largura zero */
+  transition: width 0.1s ease; /* Transição suave */
+}
+
+/* Efeito parallax opcional */
+.hero {
+  background-attachment: fixed; /* Imagem de fundo fixa */
+}
+
+/*               MODAL                          */
+
+/* Modal básico */
+.modal {
+  display: none; /* Inicialmente oculto */
+  position: fixed; /* Posição fixa */
+  z-index: 1000; /* Acima de outros elementos */
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  overflow: auto; /* Scroll se necessário */
+  background-color: rgba(0,0,0,0.5); /* Fundo semi-transparente */
+}
+
+/* Conteúdo do modal */
+.modal-content {
+  background-color: #fff; /* Fundo branco */
+  margin: 10% auto; /* Centraliza verticalmente */
+  padding: 20px; /* Espaçamento interno */
+  border-radius: 10px; /* Bordas arredondadas */
+  width: 80%; /* Largura */
+  max-width: 500px; /* Largura máxima */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Sombra */
+  animation: fadeIn 0.3s ease-in-out; /* Animação de entrada */
+}
+
+/* Animação de fade in */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); } /* Início: transparente e menor */
+  to { opacity: 1; transform: scale(1); } /* Fim: visível e tamanho normal */
+}
+
+/* Botão de fechar */
+.close {
+  float: right; /* Alinha à direita */
+  font-size: 24px; /* Tamanho grande */
+  font-weight: bold; /* Negrito */
+  cursor: pointer; /* Cursor de pointer */
+  color: #aaa; /* Cor cinza */
+}
+
+/* Efeito hover no botão de fechar */
+.close:hover {
+  color: #333; /* Cor mais escura */
+}
